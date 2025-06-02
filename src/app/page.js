@@ -1,4 +1,4 @@
-import BestSelling from "@/components/BestSelling";
+import BestSelling from "@/components/Products/BestSelling";
 import Categories from "@/components/HomePage/Categories";
 import Hero from "@/components/HomePage/Hero";
 import React from "react";
