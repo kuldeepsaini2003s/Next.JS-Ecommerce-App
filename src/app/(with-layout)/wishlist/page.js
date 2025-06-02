@@ -37,6 +37,8 @@ const Wishlist_Page = () => {
                     <Image
                       className="w-40 max-[500px]:w-full flex-shrink-0 min-[500px]:shadow-md h-40 max-[500px]:h-60 object-cover max-[500px]:object-contain object-top rounded-md"
                       src={item?.images[0].url}
+                      width={0}
+                      height={0}
                       alt=""
                     />
                     <div className="space-y-2 w-full">
@@ -62,11 +64,11 @@ const Wishlist_Page = () => {
             ))}
           </div>
         ) : (
-          <div className="flex flex-col h-[25rem] justify-center items-center gap-2">
-            <Image className="w-72" src="/empty-wishlist.png" alt="" />
+          <div className="flex flex-col h-[25rem] justify-center items-center gap-5">
+            <Image className="w-72" width={800} height={0} src="/empty-wishlist.png" alt="" />
             <h1 className="font-semibold">Your wishList is currently empty.</h1>
             <Link href={"/"}>
-              <button className="font-light cursor-pointer">
+              <button className="bg-[#342ac8] text-white rounded-full px-4 py-1 font-light cursor-pointer">
                 RETURN TO Shop
               </button>
             </Link>

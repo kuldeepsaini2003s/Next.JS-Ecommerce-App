@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import styles from "../../../utils/styles";
+import styles from "@/utils/styles";
 import { AiOutlineMessage, AiOutlineShoppingCart } from "react-icons/ai";
 import Image from "next/image";
 

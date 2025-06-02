@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import wishlist_Empty_Img from "../../assets/empty-wishlist.png";
 import Link from "next/link";
 // import { useDispatch, useSelector } from "react-redux";
 import { FaHeart } from "react-icons/fa6";

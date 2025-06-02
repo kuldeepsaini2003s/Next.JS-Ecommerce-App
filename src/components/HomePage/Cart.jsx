@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 //   updateCartQuantity,
 // } from "../../utils/redux/cartSlice";
 import Link from "next/link";
-import styles from "../../utils/styles";
+import styles from "@/utils/styles";
 import Image from "next/image";
 
 const Cart_Page = () => {

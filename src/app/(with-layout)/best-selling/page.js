@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "@/utils/styles";
-import { Link } from "next/link";
 import ProductCard from "@/components/Products/ProductCard";
 
 const BestSelling = async () => {

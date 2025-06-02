@@ -2,13 +2,14 @@
 import React from "react";
 import styles from "@/utils/styles";
 // import CountDown from "./CountDown";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
 import { toast } from "react-toastify";
 import Image from "next/image";
 
-const EventCard = ({ active }) => {
-  const { data } = useFetch("https://fakestoreapi.com/products");
+export const EventCard = async ({ active }) => {
+  const res = await fetch("https://fakestoreapi.com/products");
+  const data = await res.json();
+
   // const addToCartHandler = (data) => {
   //   const isItemExists = cart && cart.find((i) => i._id === data._id);
   //   if (isItemExists) {
@@ -31,10 +32,15 @@ const EventCard = ({ active }) => {
       } lg:flex gap-5 p-2`}
     >
       <div className="w-[50%] m-auto">
-        <Image src={`${data && data[9]?.image}`} alt="" />
+        <Image
+          width={0}
+          height={0}
+          src={`${data && data[9]?.image}`}
+          alt="product image"
+        />
       </div>
       <div className="w-full lg:[w-50%] flex flex-col justify-center">
-        <h2 className={`${styles.productTitle}`}>{data && data[9]?.name}</h2>
+        <h2 className={`${styles.productTitle}`}>{data && data[9]?.title}</h2>
         <p>{data && data[9]?.description}</p>
         <div className="flex py-2 justify-between">
           <div className="flex">

@@ -14,14 +14,15 @@ const ProductCard = ({ product }) => {
   //     top: "0",
   //   });
   // };
-  
+
   const handleNavigate = () => {
     router.push(`/product/${product.id}`);
   };
+
   return (
     <div
       onClick={handleNavigate}
-      className="w-full bg-white rounded-lg shadow-xl overflow-hidden"
+      className="w-full bg-white cursor-pointer rounded-lg shadow-xl overflow-hidden"
     >
       {/* Product Image Container */}
       <div className="relative rounded-lg p-4 mb-2">

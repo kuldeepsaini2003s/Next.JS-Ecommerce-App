@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../utils/styles";
+import styles from "@/utils/styles";
 import ProductCard from "@/components/Products/ProductCard";
 
 const ProductsList = async () => {
