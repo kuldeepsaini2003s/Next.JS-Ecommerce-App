@@ -8,15 +8,15 @@ import Image from "next/image";
 const ProductCard = ({ product }) => {
   const router = useRouter();
 
-  const scrollTop = () => {
-    window.scrollTo({
-      behavior: "smooth",
-      top: "0",
-    });
-  };
+  // const scrollTop = () => {
+  //   window.scrollTo({
+  //     behavior: "smooth",
+  //     top: "0",
+  //   });
+  // };
+  
   const handleNavigate = () => {
     router.push(`/product/${product.id}`);
-    scrollTop();
   };
   return (
     <div
