@@ -3,9 +3,11 @@ import { Eye, Heart, ShoppingCart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { AiOutlineStar } from "react-icons/ai";
+import Image from "next/image";
 
 const ProductCard = ({ product }) => {
-  const router = useRouter;
+  const router = useRouter();
+
   const scrollTop = () => {
     window.scrollTo({
       behavior: "smooth",
@@ -23,9 +25,11 @@ const ProductCard = ({ product }) => {
     >
       {/* Product Image Container */}
       <div className="relative rounded-lg p-4 mb-2">
-        <img
+        <Image
           src={product?.image}
           alt="Product image"
+          width={300}
+          height={300}
           className="w-full h-40 object-contain mx-auto"
         />
 

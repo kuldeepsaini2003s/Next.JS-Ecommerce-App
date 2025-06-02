@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 // } from "../../utils/redux/cartSlice";
 import Link from "next/link";
 import styles from "@/utils/styles";
+import Image from "next/image";
 
 const Cart_Page = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -82,7 +83,7 @@ const Cart_Page = () => {
               >
                 {/* <Link href={`/products/${item?._id}`}> */}
                 <div className="flex gap-5 max-[600px]:flex-col w-full">
-                  <img
+                  <Image
                     className="w-40 max-[600px]:w-full flex-shrink-0 shadow-md h-40 max-[600px]:h-60 object-cover max-[600px]:object-contain  object-top rounded-md"
                     src={item?.images[0].url}
                     alt=""
@@ -136,7 +137,7 @@ const Cart_Page = () => {
           </div>
         ) : (
           <div className="w-full flex flex-col justify-center items-center">
-            <img src="/Cart_img.png" alt="Empty Cart" />
+            <Image src="/Cart_img.png" alt="Empty Cart" />
             <p className="text-sm font-medium">Your cart is currently empty.</p>
           </div>
         )}

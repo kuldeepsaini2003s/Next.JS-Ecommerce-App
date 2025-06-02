@@ -6,6 +6,7 @@ import {
   footerProductLinks,
   footerSupportLinks,
 } from "@/utils/constants";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -29,11 +30,14 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:gird-cols-3 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16 sm:text-center">
+      <div className="grid grid-cols-1 sm:gird-cols-3 lg:grid-cols-4 gap-6 sm:px-8 sm:py-16 py-8 sm:text-center">
         <ul className="px-5 text-center sm:text-start flex sm:block flex-col items-center">
-          <img
+          <Image
             src="/logo.svg"
             alt=""
+            width={0}
+            height={0}
+            className="w-40"
             style={{ filter: "brightness(0) invert(1)" }}
           />
           <br />
@@ -104,10 +108,7 @@ const Footer = () => {
         <span>© No CopyRight Issues | @kuldeep |</span>
         <span>Terms · Feel Free to Learn by cloning ideas & Knowledge</span>
         <div className="sm:block flex items-center justify-center w-full">
-          <img
-            src="https://hamart-shop.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffooter-payment.a37c49ac.png&w=640&q=75"
-            alt=""
-          />
+          <Image src="/payment method.png" width={20} height={20} alt="" />
         </div>
       </div>
     </div>

@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import wishlist_Empty_Img from "../../assets/empty-wishlist.png";
 import Link from "next/link";
 // import { useDispatch, useSelector } from "react-redux";
 import { FaHeart } from "react-icons/fa6";
 // import { removeFromWishlist } from "../../utils/redux/wishlistSlice";
+import Image from "next/image";
 
 const Wishlist_Page = () => {
   const [wishlistItems, setWishlistItems] = useState([]);
@@ -34,7 +35,7 @@ const Wishlist_Page = () => {
               >
                 <Link href={`/products/${item?._id}`}>
                   <div className="flex w-full max-[500px]:flex-col gap-5">
-                    <img
+                    <Image
                       className="w-40 max-[500px]:w-full flex-shrink-0 min-[500px]:shadow-md h-40 max-[500px]:h-60 object-cover max-[500px]:object-contain object-top rounded-md"
                       src={item?.images[0].url}
                       alt=""
@@ -63,7 +64,7 @@ const Wishlist_Page = () => {
           </div>
         ) : (
           <div className="flex flex-col h-[25rem] justify-center items-center gap-2">
-            <img className="w-72" src={wishlist_Empty_Img} alt="" />
+            <Image className="w-72" src={wishlist_Empty_Img} alt="" />
             <h1 className="font-semibold">Your wishList is currently empty.</h1>
             <Link href={"/"}>
               <button className="font-light cursor-pointer">

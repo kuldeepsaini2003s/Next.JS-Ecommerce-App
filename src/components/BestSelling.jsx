@@ -10,7 +10,7 @@ const BestSelling = async () => {
 
   return (
     <div className={`${styles.section}`}>
-      <h1 className="font-medium text-xl">Best Selling</h1>
+      <h1 className="font-medium text-2xl">Best Selling</h1>
       <div
         className={`grid grid-cols-5 max-[1200px]:grid-cols-4 max-[1000px]:grid-cols-3 max-[800px]:grid-cols-2 max-[500px]:grid-cols-1 gap-5 my-5`}
       >

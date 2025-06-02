@@ -6,6 +6,7 @@ import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import Navbar from "./Navbar";
+import Image from "next/image";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,15 @@ const Header = () => {
         <div className="hidden min-[800px]:flex items-center justify-between">
           <div>
             <Link href="/">
-              <img src="/logo.svg" alt="Logo" />
+              <Image
+                src="/logo.svg"
+                width={0}
+                height={0}
+                className="h-full w-full"
+                blurDataURL="/logo.svg"
+                placeholder="blur"
+                alt="Logo"
+              />
             </Link>
           </div>
           {/* search box */}
@@ -39,7 +48,7 @@ const Header = () => {
                     return (
                       <Link href={`/product/${i._id}`}>
                         <div className="w-full flex items-start-py-3">
-                          <img
+                          <Image
                             src={`${i.images[0]?.url}`}
                             alt=""
                             className="w-[40px] h-[40px] mr-[10px]"
@@ -81,10 +90,12 @@ const Header = () => {
           </div>
           <div>
             {/* <Link href="/"> */}
-            <img
-              src="/public/logo.svg"
+            <Image
+              src="/logo.svg"
               alt=""
-              className="mt-3 cursor-pointer"
+              width={0}
+              height={0}
+              className="mt-3 cursor-pointer w-full"
             />
             {/* </Link> */}
           </div>

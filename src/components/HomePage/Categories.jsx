@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import React from "react";
 import { brandingData, categoriesData } from "@/utils/constants";
 import styles from "@/utils/styles";
 import { Link } from "next/link";
-
+import Image from "next/image";
 
 const Categories = () => {
   return (
@@ -26,25 +26,27 @@ const Categories = () => {
       </div>
 
       <div
-        className={`${styles.section} bg-white p-6 rounded-lg shadow-xl my-10 `}
+        className={`${styles.section} bg-white sm:p-6 p-4 rounded-lg shadow-xl my-10`}
         id="categories"
       >
-        <div className="grid gap-[5px] grid-cols-2 md:gap-[10px] lg:grid-cols-4 lg:gap-[20px] xl:grid-cols-5 xl:gap-[30px]">
+        <div className="grid gap-y-5 grid-cols-2 md:gap-[10px] lg:grid-cols-4 lg:gap-[20px] xl:grid-cols-5 xl:gap-[30px]">
           {categoriesData &&
             categoriesData.map((i) => (
               // <Link key={i.id} href={`/products?category=${i.title}`}>
-                <div
-                  className="w-full h-fit gap-2 flex flex-col items-center justify-between cursor-pointer"
-                  onClick={() => handleSubmit(i)}
-                  key={i.id}
-                >
-                  <img
-                    src={i.image_Url}
-                    className="w-[130px] h-[100px] rounded-xl object-center mix-blend-multiply object-contain"
-                    alt=""
-                  />
-                  <h5 className={`text-[18px] leading-[1.3]`}>{i.title}</h5>
-                </div>
+              <div
+                className="w-full h-fit gap-2 flex flex-col items-center justify-between cursor-pointer"
+                onClick={() => handleSubmit(i)}
+                key={i.id}
+              >
+                <Image
+                  src={i.image_Url}
+                  className="w-[100px] h-[80px] rounded-xl object-center mix-blend-multiply object-contain"
+                  width={0}
+                  height={0}
+                  alt=""
+                />
+                <h5 className={`max-sm:text-center leading-[1.3]`}>{i.title}</h5>
+              </div>
               // </Link>
             ))}
         </div>

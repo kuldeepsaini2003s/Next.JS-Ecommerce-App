@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import styles from "../../utils/styles";
 // import CountDown from "./CountDown";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import useFetch from "../../hooks/useFetch";
-
+import Image from "next/image";
 
 const EventCard = ({ active }) => {
   const { data } = useFetch("https://fakestoreapi.com/products");
@@ -32,7 +32,7 @@ const EventCard = ({ active }) => {
       } lg:flex gap-5 p-2`}
     >
       <div className="w-[50%] m-auto">
-        <img src={`${data && data[9]?.image}`} alt="" />
+        <Image src={`${data && data[9]?.image}`} alt="" />
       </div>
       <div className="w-full lg:[w-50%] flex flex-col justify-center">
         <h2 className={`${styles.productTitle}`}>{data && data[9]?.name}</h2>

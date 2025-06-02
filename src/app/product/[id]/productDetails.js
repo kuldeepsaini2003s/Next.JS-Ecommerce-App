@@ -1,25 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import styles from "../../utils/styles";
+import React, { useState } from "react";
+import styles from "../../../utils/styles";
 import { AiOutlineMessage, AiOutlineShoppingCart } from "react-icons/ai";
-import useFetch from "../../hooks/useFetch";
 import Image from "next/image";
 
-const ProductDetailsPage = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState([]);
+const ProductDetailsPage = ({ product }) => {
   const [count, setCount] = useState(1);
-
-  const { data: productDetails } = useFetch(
-    `https://fakestoreapi.com/products/${id}`
-  );
-
-  useEffect(() => {
-    if (productDetails) {
-      setProduct(productDetails);
-    }
-  });
 
   const incrementCount = () => {
     setCount((prev) => prev + 1);
@@ -37,12 +23,12 @@ const ProductDetailsPage = () => {
         <div className={`${styles.section} w-[90%] min-[800px]:w-[80%]`}>
           <div className="w-full py-5">
             <div className="block w-full min-[800px]:flex">
-              <div className="w-full min-[800px]:w-[50%]">
+              <div className="w-full min-[800px]:w-[50%] place-items-center">
                 <Image
                   src={`${product && product.image}`}
-                  alt=""
-                  width={20}
-                  height={20}
+                  alt="product image"
+                  width={400}
+                  height={0}
                   className="w-[80%] rounded-md"
                 />
                 {/* <div className="w-full flex">
@@ -80,7 +66,7 @@ const ProductDetailsPage = () => {
                   </h3>
                 </div>
 
-                <div className="flex items-center mt-12 justify-between pr-3">
+                <div className="flex items-center sm:mt-12 mt-5 justify-between pr-3">
                   <div className="flex items-center">
                     <button
                       className="bg-gradient-to-r p-1 from-teal-400 px-4 py-2 cursor-pointer to-teal-500 text-white font-bold rounded-l shadow-lg hover:opacity-75 transition duration-300 ease-in-out"

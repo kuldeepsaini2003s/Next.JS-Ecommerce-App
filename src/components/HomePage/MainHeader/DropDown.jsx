@@ -2,6 +2,7 @@
 import React from "react";
 // import { useNavigate } from "react-router-dom";
 import styles from "@/utils/styles";
+import Image from "next/image";
 
 const DropDown = ({ categoriesData, setDropDown }) => {
   // const navigate = useNavigate();
@@ -19,7 +20,7 @@ const DropDown = ({ categoriesData, setDropDown }) => {
             className={`${styles.noramlFlex}`}
             onClick={() => submitHandle(i)}
           >
-            <img
+            <Image
               src={i.image_Url}
               style={{
                 width: "30px",
