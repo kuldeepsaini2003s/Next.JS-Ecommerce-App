@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 
@@ -23,7 +23,7 @@ const Loader = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50  w-full h-screen flex items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-white w-full h-screen flex items-center justify-center">
       <Lottie options={defaultOptions} height={300} width={300} />
     </div>
   );

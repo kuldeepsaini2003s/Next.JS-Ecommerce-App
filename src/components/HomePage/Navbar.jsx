@@ -38,15 +38,15 @@ const Navbar = () => {
         <div className="relative max-[900px]:hidden">
           <button
             onClick={() => setDropDown(!dropDown)}
-            className={`flex font-medium w-60 text-lg items-center bg-white text-black px-4 py-2 ${
+            className={`flex font-medium text-lg w-[16rem] justify-between items-center bg-white text-black p-2 ${
               dropDown ? "rounded-t-md" : "rounded-md"
             }`}
           >
-            <AlignLeft className="h-6 w-6 mr-3" />
-            All Categories
-            <span className="ml-8">
-              <ChevronDown />
-            </span>
+            <div className="flex gap-3 items-center">
+              <AlignLeft className="h-5 w-5" />
+              <span>All Categories</span>
+            </div>
+            <ChevronDown />
           </button>
           {dropDown ? (
             <DropDown

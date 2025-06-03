@@ -143,7 +143,7 @@ const Cart_Page = () => {
         )}
       </div>
       {cartItems && cartItems.length > 0 && (
-        <div className="min-w-fit h-fit border border-gray-300 space-y-5 max-[1000px]:self-end bg-white rounded-md p-2 shadow-xl py-5">
+        <div className="min-w-fit h-fit border border-gray-300 space-y-5 max-[1000px]:self-end rounded-md p-2 shadow-xl py-5">
           <h1 className="text-lg font-medium">
             Subtotal ({cartItems && cartItems.length}) Total Price: $
             {calculateTotalPrice()}

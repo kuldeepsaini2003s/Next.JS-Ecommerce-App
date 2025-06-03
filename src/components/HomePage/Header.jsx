@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "@/utils/styles";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
@@ -7,9 +7,22 @@ import { IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import Navbar from "./Navbar";
 import Image from "next/image";
+import { X } from "lucide-react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const MenuRef = useRef();
+
+  useEffect(() => {
+    const handleOutSide = (e) => {
+      if (MenuRef?.current && !MenuRef?.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutSide);
+    return () => document.removeEventListener("mousedown", handleOutSide);
+  }, []);
 
   return (
     <>
@@ -75,10 +88,7 @@ const Header = () => {
 
       {/* Mobile Screen Header */}
       <div
-        className={`${
-          open === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        }
-      w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm min-[800px]:hidden`}
+        className={`w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm min-[800px]:hidden`}
       >
         <div className="w-full flex items-center justify-between">
           <div>
@@ -111,6 +121,27 @@ const Header = () => {
 
         {/* header sidebar */}
       </div>
+
+      {open && (
+        <div className="fixed inset-0 bg-black/50 w-dvh h-svh z-10">
+          <div ref={MenuRef} className="bg-white w-72 p-4 h-svh">
+            <div className="flex justify-between items-center">
+              <Image
+                src="/logo.svg"
+                className="cursor-pointer"
+                width={120}
+                height={0}
+                alt="Logo"
+              />
+              <X
+                size={25}
+                onClick={() => setOpen(false)}
+                className="cursor-pointer"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Navar */}
       <Navbar />

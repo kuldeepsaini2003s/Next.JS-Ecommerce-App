@@ -2,7 +2,7 @@
 import React from "react";
 import { brandingData, categoriesData } from "@/utils/constants";
 import styles from "@/utils/styles";
-import { Link } from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 
 const Categories = () => {
@@ -10,7 +10,7 @@ const Categories = () => {
     <>
       <div className={`${styles.section} hidden sm:block`}>
         <div
-          className={`branding my-12 flex justify-between shadow-xl w-full shadow-sm bg-white p-5 rounded-md`}
+          className={`my-12 place-items-center grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-y-10 shadow-xl w-full p-5 rounded-md`}
         >
           {brandingData &&
             brandingData.map((i, index) => (
@@ -29,25 +29,28 @@ const Categories = () => {
         className={`${styles.section} bg-white sm:p-6 p-4 rounded-lg shadow-xl my-10`}
         id="categories"
       >
-        <div className="grid gap-y-5 grid-cols-2 md:gap-[10px] lg:grid-cols-4 lg:gap-[20px] xl:grid-cols-5 xl:gap-[30px]">
+        <div className="grid place-items-center gap-y-5 grid-cols-2 min-[500px]:grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))]">
           {categoriesData &&
             categoriesData.map((i) => (
-              // <Link key={i.id} href={`/products?category=${i.title}`}>
-              <div
-                className="w-full h-fit gap-2 flex flex-col items-center justify-between cursor-pointer"
-                onClick={() => handleSubmit(i)}
-                key={i.id}
-              >
-                <Image
-                  src={i.image_Url}
-                  className="w-[100px] h-[80px] rounded-xl object-center mix-blend-multiply object-contain"
-                  width={0}
-                  height={0}
-                  alt=""
-                />
-                <h5 className={`max-sm:text-center leading-[1.3]`}>{i.title}</h5>
-              </div>
-              // </Link>
+              <Link key={i.id} href={`/products?category=${i.title}`}>
+                <div
+                  className="w-full h-fit gap-2 flex flex-col items-center justify-between cursor-pointer"
+                  onClick={() => handleSubmit(i)}
+                  key={i.id}
+                >
+                  <Image
+                    src={i.image_Url}
+                    className="w-[100px] h-[80px] rounded-xl object-center mix-blend-multiply object-contain"
+                    width={400}
+                    quality={100}
+                    height={400}
+                    alt="Category Image"
+                  />
+                  <h5 className={`max-sm:text-center leading-[1.3]`}>
+                    {i.title}
+                  </h5>
+                </div>
+              </Link>
             ))}
         </div>
       </div>
