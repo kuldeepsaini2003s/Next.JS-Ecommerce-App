@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "@/utils/styles";
 
-const login = () => {
+const Login = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -144,4 +144,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
