@@ -21,5 +21,27 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="number"].no-spinner::-webkit-inner-spin-button,
+input[type="number"].no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"].no-spinner {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.slider {
+  position: fixed;
+  top: 0;
+  left: -290px; /* Initially hidden */
+  height: 100%;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.slider.active {
+  left: 0; /* Visible when active */
 }

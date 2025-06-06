@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "@/utils/styles";
-import { Link } from "next/link";
+import styles from "@/lib/styles";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -23,13 +23,13 @@ const Hero = () => {
           quidem asperiores, laudantium temporibus soluta optio consequatur{" "}
           <br /> aliquam deserunt officia. Dolorum saepe nulla provident.
         </p>
-        {/* <Link href="/products" className="inline-block"> */}
+        <Link href="/products" className="inline-block">
           <div className={`${styles.button} mt-5`}>
             <span className="text-[#fff] font-[Poppins] text-[18px]">
               Shop Now
             </span>
           </div>
-        {/* </Link> */}
+        </Link>
       </div>
     </div>
   );

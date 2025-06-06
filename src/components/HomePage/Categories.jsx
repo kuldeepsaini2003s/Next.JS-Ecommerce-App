@@ -1,7 +1,6 @@
-"use client";
 import React from "react";
-import { brandingData, categoriesData } from "@/utils/constants";
-import styles from "@/utils/styles";
+import { brandingData, categoriesData } from "@/lib/constants";
+import styles from "@/lib/styles";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -35,7 +34,6 @@ const Categories = () => {
               <Link key={i.id} href={`/products?category=${i.title}`}>
                 <div
                   className="w-full h-fit gap-2 flex flex-col items-center justify-between cursor-pointer"
-                  onClick={() => handleSubmit(i)}
                   key={i.id}
                 >
                   <Image

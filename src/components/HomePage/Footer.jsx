@@ -1,18 +1,18 @@
 import React from "react";
 import { AiFillLinkedin, AiFillProfile, AiOutlineGithub } from "react-icons/ai";
-import { Link } from "next/link";
+import Link from "next/link";
 import {
   footercompanyLinks,
   footerProductLinks,
   footerSupportLinks,
-} from "@/utils/constants";
+} from "@/lib/constants";
 import Image from "next/image";
 
 const Footer = () => {
   return (
     <div className="bg-[#000] text-white">
       <div className="md:flex md:justify-between md:items-center sm:px-12 px-4 bg-[#342ac8] py-7">
-        <h1 className="lg:text-4xl text-3xl md:mb-0 mb-6 lg:leading-normal font-semibold md:w-2/5">
+        <h1 className="lg:text-4xl text-xl md:mb-0 mb-6 lg:leading-normal font-semibold md:w-2/5">
           <span className="text-[#56d879]">Subscribe</span> us for get news{" "}
           <br />
           events and offers
@@ -32,14 +32,16 @@ const Footer = () => {
       </div>
       <div className="grid grid-cols-1 sm:gird-cols-3 lg:grid-cols-4 gap-6 sm:px-8 sm:py-16 py-8 sm:text-center">
         <ul className="px-5 text-center sm:text-start flex sm:block flex-col items-center">
-          <Image
-            src="/logo.svg"
-            alt=""
-            width={0}
-            height={0}
-            className="w-40"
-            style={{ filter: "brightness(0) invert(1)" }}
-          />
+          <Link href="/">
+            <Image
+              src="/logo.svg"
+              alt=""
+              width={0}
+              height={0}
+              className="w-40"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
+          </Link>
           <br />
           <p>The home and elements needeed to create beatiful products.</p>
           <div className="flex items-center mt-[15px]">

@@ -1,9 +1,11 @@
 import React from "react";
-import styles from "@/utils/styles";
-import ProductCard from "@/components/Products/ProductCard";
+import styles from "@/lib/styles";
+import ProductCardWrapper from "./productCardWrapper/ProductCardWrapper";
 
 const BestSelling = async () => {
-  const res = await fetch("https://fakestoreapi.com/products");
+  const res = await fetch("https://fakestoreapi.com/products", {
+    next: { revalidate: 60 },
+  });
   const data = await res.json();
 
   if (!data) return;
@@ -15,7 +17,7 @@ const BestSelling = async () => {
         className={`grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-5 my-5`}
       >
         {data?.map((product) => (
-          <ProductCard key={product?.id} product={product} />
+          <ProductCardWrapper key={product?.id} product={product} />
         ))}
       </div>
     </div>

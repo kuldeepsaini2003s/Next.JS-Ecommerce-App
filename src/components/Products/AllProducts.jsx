@@ -1,7 +1,7 @@
 import React from "react";
-import useFetch from "../../hooks/useFetch";
-import ProductCard from "./ProductCard";
-import styles from "../../utils/styles";
+import useFetch from "../../lib/hooks/useFetch";
+import ProductCard from "./productCardWrapper/ProductCard";
+import styles from "../../lib/styles";
 import { Link } from "react-router-dom";
 
 const AllProducts = () => {
