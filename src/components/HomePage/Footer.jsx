@@ -7,6 +7,7 @@ import {
   footerSupportLinks,
 } from "@/lib/constants";
 import Image from "next/image";
+import PaymentMethodImage from "@/assets/payment method.png"
 
 const Footer = () => {
   return (
@@ -110,7 +111,7 @@ const Footer = () => {
         <span>© No CopyRight Issues | @kuldeep |</span>
         <span>Terms · Feel Free to Learn by cloning ideas & Knowledge</span>
         <div className="sm:block flex items-center justify-center w-full">
-          <Image src="/payment method.png" width={20} height={20} alt="" />
+          <Image src={PaymentMethodImage} width={20} height={20} alt="" />
         </div>
       </div>
     </div>

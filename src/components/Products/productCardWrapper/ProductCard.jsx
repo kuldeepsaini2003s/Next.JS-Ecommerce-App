@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => {
       {/* Product Image Container */}
       <div className="relative rounded-lg p-4 mb-2">
         <Image
-          src={product?.image}
+          src={product?.thumbnail || ""}
           alt="Product image"
           width={300}
           height={300}

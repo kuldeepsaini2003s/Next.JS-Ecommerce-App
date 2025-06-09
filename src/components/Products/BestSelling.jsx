@@ -1,14 +1,32 @@
 import React from "react";
 import styles from "@/lib/styles";
 import ProductCardWrapper from "./productCardWrapper/ProductCardWrapper";
+import { getBase64ImageUrl } from "@/lib/getBase64ImageUrl";
 
 const BestSelling = async () => {
-  const res = await fetch("https://fakestoreapi.com/products", {
+  const res = await fetch("https://dummyjson.com/products?limit=50", {
     next: { revalidate: 60 },
   });
-  const data = await res.json();
+  const {products} = await res.json();
 
-  if (!data) return;
+ const productsWithBlur = await Promise.all(
+    products.map(async (product) => {
+      const imagesWithBlur = await Promise.all(
+        product.images.map(async (img) => ({
+          src: img,
+          blurDataURL: await getBase64ImageUrl(img),
+        }))
+      );
+
+      return {
+        ...product,
+        images: imagesWithBlur,
+      };
+    })
+  );
+  
+
+  if (!products) return;
 
   return (
     <div className={`${styles.section}`}>
@@ -16,7 +34,7 @@ const BestSelling = async () => {
       <div
         className={`grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-5 my-5`}
       >
-        {data?.map((product) => (
+        {products?.map((product) => (
           <ProductCardWrapper key={product?.id} product={product} />
         ))}
       </div>

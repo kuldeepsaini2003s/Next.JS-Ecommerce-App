@@ -23,8 +23,8 @@ const Header = () => {
                 width={0}
                 height={0}
                 className="h-full w-full"
-                blurDataURL="/logo.svg"
                 placeholder="blur"
+                blurDataURL="/logo.svg"
                 alt="Logo"
               />
             </Link>
@@ -83,9 +83,11 @@ const Header = () => {
           <Link href="/">
             <Image
               src="/logo.svg"
-              alt=""
-              width={0}
-              height={0}
+              placeholder="blur"
+              blurDataURL="/logo.svg"
+              alt="logo"
+              width={400}
+              height={400}
               className="mt-3 cursor-pointer w-full"
             />
           </Link>

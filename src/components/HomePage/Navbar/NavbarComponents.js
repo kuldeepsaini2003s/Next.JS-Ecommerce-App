@@ -36,9 +36,7 @@ export const CategoryButton = ({ dropDown, setDropDown }) => {
           </div>
           <ChevronDown />
         </button>
-        {dropDown ? (
-          <DropDown categoriesData={categoriesData} setDropDown={setDropDown} />
-        ) : null}
+        {dropDown ? <DropDown /> : null}
       </div>
     </>
   );

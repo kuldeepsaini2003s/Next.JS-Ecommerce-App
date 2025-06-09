@@ -1,3 +1,14 @@
+import computerLaptop from "@/assets/Computer and Laptop.jpg";
+import Cosmetics from "@/assets/Cosmetic and Body Care.png";
+import Accessories from "@/assets/Accessories.jpg";
+import Cloths from "@/assets/Cloths.jpg";
+import Shoes from "@/assets/Shoes.png";
+import Gifts from "@/assets/Gift.jpg";
+import PetCare from "@/assets/Pet and Care.png";
+import MobileTablet from "@/assets/Mobile and Tablets.png";
+import MusicGaming from "@/assets/Music and Gaming.jpg";
+import Others from "@/assets/Others.png";
+
 export const brandingData = [
   {
     id: 1,
@@ -162,67 +173,66 @@ export const brandingData = [
   },
 ];
 
-// categories data
 export const categoriesData = [
   {
     id: 1,
     title: "Computers and Laptops",
     subTitle: "",
-    image_Url: "/Computer and Laptop.jpg",
+    url: computerLaptop,
   },
   {
     id: 2,
     title: "Cosmetics and Body Care",
     subTitle: "",
-    image_Url: "/Cosmetic and Body Care.png",
+    url: Cosmetics,
   },
   {
     id: 3,
-    title: "Accesories",
+    title: "Accessories",
     subTitle: "",
-    image_Url: "/Accesories.jpg",
+    url: Accessories,
   },
   {
     id: 4,
     title: "Cloths",
     subTitle: "",
-    image_Url: "/Cloths.jpg",
+    url: Cloths,
   },
   {
     id: 5,
     title: "Shoes",
     subTitle: "",
-    image_Url: "/Shoes.png",
+    url: Shoes,
   },
   {
     id: 6,
     title: "Gifts",
     subTitle: "",
-    image_Url: "/Gift.jpg",
+    url: Gifts,
   },
   {
     id: 7,
     title: "Pet Care",
     subTitle: "",
-    image_Url: "/Pet and Care.png",
+    url: PetCare,
   },
   {
     id: 8,
     title: "Mobile and Tablets",
     subTitle: "",
-    image_Url: "/Mobile and Tablets.png",
+    url: MobileTablet,
   },
   {
     id: 9,
     title: "Music and Gaming",
     subTitle: "",
-    image_Url: "/Music and Gaming.jpg",
+    url: MusicGaming,
   },
   {
     id: 10,
     title: "Others",
     subTitle: "",
-    image_Url: "/Others.png",
+    url: Others,
   },
 ];
 
@@ -285,7 +295,7 @@ export const footerSupportLinks = [
 export const faqData = [
   {
     question: "What is your return policy?",
-    answer: `If you're not satisfied with your purchase, we accept returns within 30 days of delivery. To initiate a return, please email us at support@myecommercestore.com with your order number and a brief explanation of why you're returning the item.`,
+    answer: `If you're not satisfied with your purchase, we accept returns within 30 days of delivery. To initiate a return, please email us at support..myecommercestore.com with your order number and a brief explanation of why you're returning the item.`,
   },
   {
     question: "How do I track my order?",
@@ -293,7 +303,7 @@ export const faqData = [
   },
   {
     question: "How do I contact customer support?",
-    answer: `You can contact our customer support team by emailing us at support@myecommercestore.com, or by calling us at (555) 123-4567 between the hours of 9am and 5pm EST, Monday through Friday.`,
+    answer: `You can contact our customer support team by emailing us at support..myecommercestore.com, or by calling us at (555) 123-4567 between the hours of 9am and 5pm EST, Monday through Friday.`,
   },
   {
     question: "Can I change or cancel my order?",

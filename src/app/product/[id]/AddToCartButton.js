@@ -33,7 +33,7 @@ const AddToCartButton = ({ product }) => {
 
   return (
     <>
-      <div className="flex items-center sm:mt-12 mt-5 justify-between pr-3">
+      <div className="flex items-center gap-10  pr-3">
         <div className="flex items-center">
           <button
             className="bg-gradient-to-r p-1 from-teal-400 px-4 py-2 cursor-pointer to-teal-500 text-white font-bold rounded-l shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
@@ -73,14 +73,14 @@ const AddToCartButton = ({ product }) => {
             />
           )}
         </div> */}
-      </div>
-      <div
-        className={`${styles.button} !mt-6 !rounded !h-11 flex items-center`}
-        onClick={() => addProductToCart(product._id)}
-      >
-        <span className="text-white flex items-center">
-          Add to cart <AiOutlineShoppingCart className="ml-1" />
-        </span>
+        <div
+          className={`${styles.button} max-sm:w-full  !h-10 !rounded flex items-center`}
+          onClick={() => addProductToCart(product._id)}
+        >
+          <span className="text-white flex items-center gap-2">
+            Add to cart <AiOutlineShoppingCart className="max-sm:text-2xl" />
+          </span>
+        </div>
       </div>
     </>
   );

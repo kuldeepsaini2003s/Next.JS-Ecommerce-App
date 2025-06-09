@@ -1,53 +1,23 @@
 import React from "react";
 import styles from "@/lib/styles";
 import { AiOutlineMessage } from "react-icons/ai";
-import Image from "next/image";
 import AddToCartButton from "./AddToCartButton";
+import ProductImages from "../ProductImages";
 
 const ProductDetailsPage = ({ product }) => {
   return (
     <div className="bg-white">
       {product ? (
-        <div className={`${styles.section} w-[90%] min-[800px]:w-[80%]`}>
+        <div className={`${styles.section}`}>
           <div className="w-full py-5">
-            <div className="block w-full min-[800px]:flex">
-              <div className="w-full min-[800px]:w-[50%] place-items-center">
-                <Image
-                  src={`${product && product.image}`}
-                  alt="product image"
-                  width={400}
-                  height={0}
-                  className="w-[80%] rounded-md"
-                />
-                {/* <div className="w-full flex">
-                  {product &&
-                    product.images.map((i, index) => (
-                      <div
-                        className={`${
-                          select === 0 ? "border" : "null"
-                        } cursor-pointer`}
-                      >
-                        <Image
-                          src={`${i?.url}`}
-                          alt=""
-                          className="h-[200px] overflow-hidden border mr-3 mt-3 rounded-md"
-                          onClick={() => setSelect(index)}
-                        />
-                      </div>
-                    ))}
-                  <div
-                    className={`${
-                      select === 1 ? "border" : "null"
-                    } cursor-pointer`}
-                  ></div>
-                </div> */}
-              </div>
-              <div className="w-full min-[800px]:w-[50%] pt-5">
+            <div className="block w-full gap-5 min-[650px]:flex">
+              <ProductImages product={product} />
+              <div className="min-[800px]:w-[50%] w-full ">
                 <h1 className={`${styles.productTitle}`}>{product.title}</h1>
                 <p>{product.description}</p>
                 <div className="flex pt-3">
                   <h4 className={`${styles.productDiscountPrice}`}>
-                    {product.price}$
+                    {product.discountPercentage}$
                   </h4>
                   <h3 className={`${styles.price}`}>
                     {product.price ? product.price + "$" : null}
@@ -56,7 +26,7 @@ const ProductDetailsPage = ({ product }) => {
 
                 <AddToCartButton product={product} />
 
-                <div className="flex items-center pt-8">
+                <div className="flex items-center">
                   {/* <Link href={`/shop/preview/${product?.shop._id}`}>
                     <Image
                       src={`${product?.shop?.avatar?.url}`}
@@ -75,11 +45,11 @@ const ProductDetailsPage = ({ product }) => {
                     </h5>
                   </div> */}
                   <div
-                    className={`${styles.button} bg-[#6443d1] mt-4 !rounded !h-11`}
+                    className={`${styles.button} bg-[#6443d1] !h-10 !rounded`}
                     // onClick={handleMessageSubmit}
                   >
-                    <span className="text-white flex items-center">
-                      Send Message <AiOutlineMessage className="ml-1" />
+                    <span className="text-white flex items-center gap-2">
+                      Send Message <AiOutlineMessage className="text-lg" />
                     </span>
                   </div>
                 </div>

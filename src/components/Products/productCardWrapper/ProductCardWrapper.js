@@ -5,7 +5,12 @@ import ProductCard from "./ProductCard";
 const ProductCardWrapper = ({ product }) => {
   const router = useRouter();
 
+  const scrollTop = () => {
+    window.scrollTo({ behavior: "auto", top: 0 });
+  };
+
   const handleNavigate = () => {
+    scrollTop();
     router.push(`/product/${product.id}`);
   };
   return (

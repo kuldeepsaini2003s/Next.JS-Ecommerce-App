@@ -1,5 +1,4 @@
 import "../globals.css";
-import StoreProvider from "../storeProvider";
 
 export const metadata = {
   title: "Create Next App",

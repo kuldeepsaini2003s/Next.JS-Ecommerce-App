@@ -13,13 +13,15 @@ const DropDown = ({ setDropDown }) => {
           <Link key={index} href={`/products?category=${i.title}`}>
             <div
               key={index}
-              className={`${styles.noramlFlex} relative px-2 text-sm my-1 hover:bg-gray-200`}
+              className={`${styles.normalFlex} relative px-2 text-sm my-1 hover:bg-gray-200`}
               onClick={() => setDropDown(false)}
             >
               <Image
-                src={i.image_Url}
+                src={i?.url?.src}
                 width={400}
                 height={0}
+                placeholder="blur"
+                blurDataURL={i?.url?.blurDataURL}
                 className="w-10 object-contain mix-blend-multiply"
                 alt="Category Image"
               />

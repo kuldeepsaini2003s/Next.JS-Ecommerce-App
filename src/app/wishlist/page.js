@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaHeart } from "react-icons/fa6";
 // import { removeFromWishlist } from "@/utils/redux/wishlistSlice";
 import Image from "next/image";
+import emptyCartImg from "@/assets/empty-wishlist.png";
 
 const Wishlist_Page = () => {
   const [wishlistItems, setWishlistItems] = useState([]);
@@ -65,7 +66,14 @@ const Wishlist_Page = () => {
           </div>
         ) : (
           <div className="flex flex-col h-[25rem] justify-center items-center gap-5">
-            <Image className="w-72" width={800} height={0} src="/empty-wishlist.png" alt="" />
+            <Image
+              className="w-72"
+              width={800}
+              height={0}
+              src={emptyCartImg}
+              placeholder="blur"
+              alt="empty cart"
+            />
             <h1 className="font-semibold">Your wishList is currently empty.</h1>
             <Link href={"/"}>
               <button className="bg-[#342ac8] text-white rounded-full px-4 py-1 font-light cursor-pointer">

@@ -19,10 +19,13 @@ const CartPage = ({ cartItems }) => {
                 key={item.id}
                 className="flex border w-full border-gray-200 max-[1100px]:flex-col rounded-md shadow-sm p-2 gap-3 justify-between w-full"
               >
-                <Link href={`/product/${item?.id}`}>
+                <Link
+                  className="flex gap-2 max-[1100px]:flex-col"
+                  href={`/product/${item?.id}`}
+                >
                   <Image
-                    className="min-[1100px]:w-28 h-40 max-[600px]:w-full flex-shrink-0 min-[1100px]:h-28 max-[600px]:h-60 object-contain max-[600px]:object-contain object-top rounded-md"
-                    src={item?.image}
+                    className="w-28 h-40 max-[1100px]:w-full flex-shrink-0 min-[1100px]:h-28 max-[600px]:h-60 object-contain max-[600px]:object-contain object-top rounded-md"
+                    src={item?.thumbnail}
                     width={400}
                     height={0}
                     alt=""
@@ -46,6 +49,8 @@ const CartPage = ({ cartItems }) => {
               src="/Cart_img.png"
               width={400}
               height={0}
+              placeholder="blur"
+              blurDataURL="/Cart_img.png"
               className="w-48"
               alt="Empty Cart"
             />
